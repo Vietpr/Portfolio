@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import MatrixRain from "./MatrixRain";
 
 export default function AnimatedGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,8 +92,10 @@ export default function AnimatedGrid() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 pointer-events-none z-0"
-        style={{ opacity: 0.6 }}
+        style={{ opacity: 0.35 }}
       />
+      {/* Matrix code rain */}
+      <MatrixRain />
       {/* Floating gradient orbs */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="floating-orb floating-orb-1" />
