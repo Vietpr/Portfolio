@@ -33,7 +33,7 @@ export default function CertificationsSection() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.07, duration: 0.4, ease: "easeOut" }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="relative overflow-hidden rounded-xl border bg-gradient-to-br from-blue-500/20 to-blue-600/10 border-blue-500/30 p-5 flex flex-col gap-3 group cursor-pointer transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/5"
+              className="relative overflow-hidden rounded-xl border bg-gradient-to-br from-blue-500/20 to-blue-600/10 border-blue-500/30 p-5 flex flex-col gap-3 group cursor-pointer transition-all duration-300 hover:neon-glow-sm hover:border-primary/40"
             >
               {/* Subtle glow on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

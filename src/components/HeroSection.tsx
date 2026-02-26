@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { personalInfo } from "@/data";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import portrait from "@/assets/portrait-v.png";
+import MosaicReveal from "@/components/MosaicReveal";
+import ShootingStars from "@/components/ShootingStars";
 
 const Scene3D = lazy(() => import("./Scene3D"));
 
@@ -39,14 +41,23 @@ export default function HeroSection() {
         </Suspense>
       </div>
 
+      {/* ── Background: Shooting Stars ── */}
+      <div className="absolute inset-0 z-[0]">
+        <ShootingStars />
+      </div>
+
       {/* ── Background: Portrait (right side, overlaying on background) ── */}
       <div className="absolute inset-0 z-[1] pointer-events-none hidden lg:block">
         <div className="absolute right-10 bottom-10 w-[35%] h-[85%] flex items-end justify-end">
           <div className="portrait-glow relative h-full w-full">
-            <img
+            <MosaicReveal
               src={portrait}
               alt={personalInfo.name}
-              className="portrait-cyber w-full h-full object-contain object-bottom"
+              className="portrait-cyber w-full h-full"
+              cols={7}
+              rows={9}
+              duration={2.0}
+              delay={0.5}
             />
           </div>
         </div>
@@ -63,10 +74,14 @@ export default function HeroSection() {
             className="lg:hidden mb-8 flex justify-center"
           >
             <div className="portrait-glow">
-              <img
+              <MosaicReveal
                 src={portrait}
                 alt={personalInfo.name}
-                className="portrait-cyber w-44 h-44 sm:w-52 sm:h-52 rounded-2xl object-contain object-center"
+                className="portrait-cyber w-44 h-44 sm:w-52 sm:h-52 rounded-2xl"
+                cols={5}
+                rows={5}
+                duration={1.5}
+                delay={0.3}
               />
             </div>
           </motion.div>
