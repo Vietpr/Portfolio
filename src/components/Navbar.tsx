@@ -64,7 +64,7 @@ export default function Navbar() {
           onClick={() => scrollTo("about")}
           className="flex items-center"
         >
-          <img src="/favicon.ico" alt="Logo" className="h-11 w-11 rounded-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}favicon.ico`} alt="Logo" className="h-11 w-11 rounded-full object-cover" />
         </button>
 
         <ul className="hidden md:flex items-center gap-1">
