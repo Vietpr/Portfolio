@@ -43,7 +43,7 @@ export const personalInfo = {
   name: "Pham Van Viet",
   title: "AI Engineer",
   about:
-    "I build intelligent systems that bridge cutting-edge AI research with real-world applications.\n\nMy work spans computer vision, generative AI, and large language models, from data preparation and model development to building reliable AI-powered systems. I also have hands-on experience deploying AI solutions on AWS.",
+    "I build intelligent systems that bridge cutting-edge AI research with real-world applications. My work spans computer vision, generative AI, and large language models, from data preparation and model development to building reliable AI-powered systems. I also have hands-on experience deploying and scaling robust AI solutions on AWS cloud infrastructure.",
   email: "phamvietofficial@gmail.com",
 };
 

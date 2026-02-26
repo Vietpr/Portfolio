@@ -414,12 +414,12 @@
 
 /* ── Cyberpunk Portrait ───────────────────────────────── */
 .portrait-cyber {
-  filter: grayscale(40%) contrast(1.15) brightness(1.05);
+  filter: grayscale(30%) contrast(1.1) brightness(1.05);
   -webkit-mask-image: linear-gradient(to bottom,
-      black 55%,
+      black 60%,
       transparent 100%);
   mask-image: linear-gradient(to bottom,
-      black 55%,
+      black 60%,
       transparent 100%);
   transition: filter 0.5s ease;
 }
@@ -428,36 +428,9 @@
   filter: grayscale(20%) contrast(1.2) brightness(1.1) hue-rotate(10deg);
 }
 
-/* Cyan glow border behind portrait */
+/* Portrait container */
 .portrait-glow {
   position: relative;
-}
-
-.portrait-glow::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  background: linear-gradient(135deg,
-      hsl(185 100% 50% / 0.5),
-      hsl(270 60% 55% / 0.4),
-      hsl(185 100% 50% / 0.3));
-  filter: blur(24px);
-  z-index: -1;
-  border-radius: 1rem;
-  opacity: 0.7;
-  animation: portrait-pulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes portrait-pulse {
-  0% {
-    opacity: 0.5;
-    filter: blur(20px);
-  }
-
-  100% {
-    opacity: 0.85;
-    filter: blur(28px);
-  }
 }
 
 /* ── Text Readability Backdrop ────────────────────────── */

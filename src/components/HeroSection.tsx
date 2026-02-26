@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/portrait-v.png";
 
 const Scene3D = lazy(() => import("./Scene3D"));
 
@@ -16,6 +16,19 @@ function TypewriterTitle() {
   );
 }
 
+function TypewriterName() {
+  const { displayed: name, done: nameDone } = useTypewriter(personalInfo.name, 80, 1500);
+  return (
+    <h1
+      className={`glitch text-4xl sm:text-5xl lg:text-7xl font-bold breathing-gradient leading-tight cursor-default${nameDone ? ' glitch-load' : ''}`}
+      data-text={name}
+    >
+      {name}
+      {!nameDone && <span className="animate-pulse ml-0.5 text-primary">|</span>}
+    </h1>
+  );
+}
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" id="about">
@@ -26,17 +39,15 @@ export default function HeroSection() {
         </Suspense>
       </div>
 
-      {/* ── Background: Portrait (right side, large, fading) ── */}
+      {/* ── Background: Portrait (right side, overlaying on background) ── */}
       <div className="absolute inset-0 z-[1] pointer-events-none hidden lg:block">
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[40%] h-[80%] flex items-center justify-end">
-          <div className="portrait-glow w-full h-full max-w-[420px] relative" style={{ mixBlendMode: "lighten" }}>
+        <div className="absolute right-10 bottom-10 w-[35%] h-[85%] flex items-end justify-end">
+          <div className="portrait-glow relative h-full w-full">
             <img
               src={portrait}
               alt={personalInfo.name}
-              className="portrait-cyber w-full h-full object-cover object-top"
+              className="portrait-cyber w-full h-full object-contain object-bottom"
             />
-            {/* Subtle cyan tint overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/8 to-secondary/5 mix-blend-color" />
           </div>
         </div>
       </div>
@@ -55,7 +66,7 @@ export default function HeroSection() {
               <img
                 src={portrait}
                 alt={personalInfo.name}
-                className="portrait-cyber w-44 h-44 sm:w-52 sm:h-52 rounded-2xl object-cover object-top"
+                className="portrait-cyber w-44 h-44 sm:w-52 sm:h-52 rounded-2xl object-contain object-center"
               />
             </div>
           </motion.div>
@@ -69,18 +80,13 @@ export default function HeroSection() {
             <TypewriterTitle />
           </motion.div>
 
-          {/* Name: Glitch + Breathing Gradient */}
+          {/* Name: Typewriter + Glitch + Breathing Gradient */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <h1
-              className="glitch glitch-load text-4xl sm:text-5xl lg:text-7xl font-bold breathing-gradient leading-tight cursor-default"
-              data-text={personalInfo.name}
-            >
-              {personalInfo.name}
-            </h1>
+            <TypewriterName />
           </motion.div>
 
           {/* About paragraph */}
