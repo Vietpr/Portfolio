@@ -79,17 +79,30 @@ export const skillCategories: SkillCategory[] = [
 
 export const workExperience: WorkExperience[] = [
   {
-    company: "VTI Group",
+    company: "VTI",
     role: "AI Engineer",
-    period: "Aug 2024 – Present",
+    period: "Aug 2024 - Present",
     summary:
-      "Responsible for researching, developing, and deploying production AI systems (Computer Vision & MLOps) for international clients.",
+      "DOMAIN: Generative AI (LLMs, RAG, Agentic Systems), Computer Vision & Robotics",
     contributions: [
-      "Computer Vision & Robotics: Developed a 6-DoF Pose Estimation core using ArUco/AprilTag and OpenCV to calculate 2D-3D correspondences for autonomous landing scenarios.",
-      "Signal Processing: Implemented and tuned a Kalman Filter to effectively smooth pose data and eliminate jitter from camera movement, ensuring stable coordinate tracking.",
-      "System Integration: Integrated vision modules into ROS2, publishing real-time TF frames and pose topics to simulate drone control and visualization in RViz.",
-      "AI Infrastructure: Architected a scalable training & deployment platform using FastAPI and Docker, standardizing the ML lifecycle and ensuring environment consistency.",
-      "Performance Optimization: Refined OCR and geometric analysis algorithms for Japanese document processing, successfully boosting accuracy from 76.19% to 90.32%.",
+      "COMPUTER VISION: Built pipelines for detection, segmentation, keypoints, OCR (YOLO, PaddleDetection/OCR, SAM, RF-DETR)",
+      "ROBOTICS: ROS2-based systems for drone simulation, control, and precision landing",
+      "LLM / GENAI: Built LLM-powered assistant for KPI analysis & reporting; implemented RAG (OpenSearch), multi-LLM orchestration, agentic workflows, function calling (structured JSON outputs), dynamic prompting",
+      "DATA & RELIABILITY: ETL + SQL pipelines to ensure data consistency and reduce hallucination",
+      "PLATFORM & OPTIMIZATION: No-code AI training platform; ONNX, TensorRT for real-time/edge deployment",
+      "CLOUD & SYSTEM: AWS (S3, EC2, ECR, SageMaker, Bedrock); OpenSearch (RAG), Redis (caching/broker), Celery (async task processing)",
+    ],
+  },
+  {
+    company: "Freelancer - Self employed",
+    role: "Freelance Data Scientist",
+    period: "Jul 2023 - May 2024",
+    summary:
+      "Built data pipelines, predictive models, and NLP pipelines for real estate and crypto analysis.",
+    contributions: [
+      "Built data pipelines and predictive models for real estate price analysis in Hanoi, including data collection, cleaning, feature engineering, and price forecasting",
+      "Built NLP pipelines with clustering and unsupervised learning to analyze crypto news and generate data-driven insights for decision support",
+      "Tools & Stack: Python, SQL, Jupyter Notebook, Selenium, BeautifulSoup; ML models (Random Forest, Linear Regression, XGBoost)",
     ],
   },
 ];
@@ -217,9 +230,22 @@ export const certifications: Certification[] = [
     link: "https://www.coursera.org/account/accomplishments/specialization/certificate/JNUQNFSUAA8O",
   },
   {
+    title: "AWS Generative AI and AI Agents with Amazon Bedrock",
+    issuer: "AWS",
+    date: "2026",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/DNR72YH5TPH8",
+  },
+  {
+    title: "Project Management Principles and Practices",
+    issuer: "Coursera",
+    date: "2025",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/D0M1X9CZVLUQ",
+  },
+  {
     title: "Applied Data Science with R",
     issuer: "IBM",
     date: "2024",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/QMDXCGPVXLST",
   },
 ];
 
